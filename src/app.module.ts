@@ -11,6 +11,8 @@ import {
   SQL_TYPE,
   SQL_USER,
 } from './core/config';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -25,6 +27,8 @@ import {
       synchronize: true,
     }),
     ConfigModule.forRoot(),
+    AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
